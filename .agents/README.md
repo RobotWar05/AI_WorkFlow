@@ -21,3 +21,5 @@
 ```
 
 Do not store raw chat, secrets, credentials or transient run logs here. Use `.aiwf/runs/` for local generated run state and Git for file history.
+
+`prompts/start-new-chat.md` is for a concise new-chat/resume startup. `prompts/start-new-private-first-task.md` is for a new scoped task. `prompts/bootstrap-project.md` initializes this control-plane structure in another project after approval.

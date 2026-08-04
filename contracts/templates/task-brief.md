@@ -5,6 +5,9 @@
 - Deliverables:
 - Non-goals:
 - Domain/mode/risk:
+- Data classification and secret handling:
+- Network policy: local-only or allowlisted destinations + action-time approval:
+- Grounding: claim sources, untrusted-content handling, summary provenance:
 - Owner/integrator:
 - Must-load context:
 - Retrieve on demand:

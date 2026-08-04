@@ -4,7 +4,7 @@
 |---|---|---|
 | E0 Read local | Đọc file, status, log | Cho phép trong scope |
 | E1 Reversible workspace write | Sửa source/docs được yêu cầu | Cho phép khi user đã yêu cầu triển khai |
-| E2 Network read | Tài liệu, API GET không nhạy cảm | Cho phép khi research được yêu cầu |
+| E2 Network read | Tài liệu, API GET không nhạy cảm | Cần approval tại thời điểm gọi, với destination và data class cụ thể |
 | E3 External write/communication | Issue, email, PR comment, upload | Cần approval cụ thể |
 | E4 Deploy/migration/production | Deploy, DB migration, production API | Cần approval tại thời điểm chạy |
 | E5 Identity/credential/payment | Login, OTP, KYC, ngân hàng | User kiểm soát; agent không tự đại diện |
@@ -17,3 +17,4 @@
 - Delegation packet phải ghi effect class tối đa.
 - Agent không được né approval bằng cách giao hành động cho agent khác.
 - Secret chỉ truyền qua runtime secret mechanism, không ghi vào contract, log hoặc artifact.
+- Local-only là mặc định. Nếu runtime không thể thực thi network restriction, phải báo giới hạn này thay vì gọi run là local-only.

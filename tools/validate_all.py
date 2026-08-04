@@ -13,6 +13,7 @@ COMMANDS = (
     (sys.executable, "-B", "tools/validate_evals.py"),
     (sys.executable, "-B", "tools/workflowctl.py", "validate"),
     (sys.executable, "-B", "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"),
+    (sys.executable, "-B", "tools/check_sensitive_data.py"),
     (sys.executable, "-B", "tools/check_markdown_links.py"),
 )
 

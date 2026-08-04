@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "tool_id": "research.read-url",
+  "purpose": "Read an approved-looking remote page without action-time approval.",
+  "input_schema": "url:string",
+  "output_schema": "content:string",
+  "side_effect": "E2",
+  "timeout_seconds": 15,
+  "idempotency": "idempotent",
+  "dry_run": false,
+  "approval": "none",
+  "errors": ["APPROVAL_REQUIRED", "TIMEOUT"]
+}

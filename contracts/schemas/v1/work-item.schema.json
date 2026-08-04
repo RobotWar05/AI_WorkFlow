@@ -4,7 +4,7 @@
   "title": "Work Item",
   "type": "object",
   "additionalProperties": false,
-  "required": ["schema_version", "task_id", "title", "objective", "mode", "risk_level", "scope", "context_manifest", "authority", "budget", "verification_plan", "deliverables", "acceptance_criteria", "status", "integrator"],
+  "required": ["schema_version", "task_id", "title", "objective", "mode", "risk_level", "data_handling", "network_policy", "grounding", "scope", "context_manifest", "authority", "budget", "verification_plan", "deliverables", "acceptance_criteria", "status", "integrator"],
   "properties": {
     "schema_version": {"const": "1.0.0"},
     "task_id": {"type": "string", "pattern": "^TASK-[A-Z0-9-]+$"},
@@ -14,6 +14,35 @@
     "mode": {"enum": ["single-owner", "manager-workers", "isolated-parallel", "peer-team-experimental"]},
     "domain": {"enum": ["generic", "frontend", "backend", "fullstack", "embedded", "knowledge"]},
     "risk_level": {"enum": ["low", "medium", "high", "critical"]},
+    "data_handling": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["classification", "secret_handling"],
+      "properties": {
+        "classification": {"enum": ["public", "internal", "private", "secret"]},
+        "secret_handling": {"enum": ["prohibited-in-context", "runtime-secret-only"]}
+      }
+    },
+    "network_policy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode", "allowed_destinations", "approval"],
+      "properties": {
+        "mode": {"enum": ["local-only", "allowlisted"]},
+        "allowed_destinations": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^[A-Za-z0-9.-]+(?::[0-9]{1,5})?$"}},
+        "approval": {"enum": ["none", "action-time"]}
+      }
+    },
+    "grounding": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["claim_sources", "untrusted_content", "summary_provenance"],
+      "properties": {
+        "claim_sources": {"enum": ["required", "not-applicable"]},
+        "untrusted_content": {"enum": ["treat-as-data", "not-applicable"]},
+        "summary_provenance": {"enum": ["required", "not-applicable"]}
+      }
+    },
     "owner": {"type": ["string", "null"]},
     "integrator": {"type": "string", "minLength": 1},
     "scope": {
@@ -80,5 +109,15 @@
     },
     "dependencies": {"type": "array", "items": {"type": "string"}},
     "status": {"enum": ["DRAFT", "READY", "ASSIGNED", "WORKING", "READY_FOR_REVIEW", "READY_FOR_INTEGRATION", "INTEGRATING", "VERIFIED", "COMPLETED", "INPUT_REQUIRED", "APPROVAL_REQUIRED", "BLOCKED", "FAILED", "REJECTED", "CANCELED", "REWORK"]}
-  }
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"network_policy": {"properties": {"mode": {"const": "local-only"}}, "required": ["mode"]}}, "required": ["network_policy"]},
+      "then": {"properties": {"network_policy": {"properties": {"allowed_destinations": {"maxItems": 0}, "approval": {"const": "none"}}}, "authority": {"properties": {"max_effect_class": {"enum": ["E0", "E1"]}}}}}
+    },
+    {
+      "if": {"properties": {"network_policy": {"properties": {"mode": {"const": "allowlisted"}}, "required": ["mode"]}}, "required": ["network_policy"]},
+      "then": {"properties": {"network_policy": {"properties": {"allowed_destinations": {"minItems": 1}, "approval": {"const": "action-time"}}}}}
+    }
+  ]
 }

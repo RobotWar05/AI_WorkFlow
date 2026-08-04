@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "TASK-BAD-002",
+  "title": "Task without declared network policy",
+  "objective": "Show that data and network boundaries are mandatory.",
+  "mode": "single-owner",
+  "risk_level": "low",
+  "data_handling": {"classification": "internal", "secret_handling": "prohibited-in-context"},
+  "grounding": {"claim_sources": "required", "untrusted_content": "treat-as-data", "summary_provenance": "required"},
+  "integrator": "integrator",
+  "scope": {"include": [], "exclude": []},
+  "context_manifest": {"must_load": [], "retrieve_on_demand": [], "reference_only": [], "excluded": []},
+  "authority": {"read_paths": [], "write_paths": [], "protected_paths": [], "max_effect_class": "E0", "approval_gates": []},
+  "budget": {"max_turns": 2, "max_minutes": 5, "max_tool_calls": 5, "max_children": 0, "max_concurrency": 1},
+  "verification_plan": ["Inspect output"],
+  "deliverables": ["Output"],
+  "acceptance_criteria": [{"id": "AC-1", "criterion": "Task declares its data boundary."}],
+  "status": "DRAFT"
+}

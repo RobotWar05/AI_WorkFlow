@@ -20,7 +20,7 @@
   },
   "allOf": [
     {
-      "if": {"properties": {"side_effect": {"enum": ["E3", "E4", "E5", "E6", "E7"]}}, "required": ["side_effect"]},
+      "if": {"properties": {"side_effect": {"enum": ["E2", "E3", "E4", "E5", "E6", "E7"]}}, "required": ["side_effect"]},
       "then": {"properties": {"approval": {"const": "action-time"}}}
     }
   ]

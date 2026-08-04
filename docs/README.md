@@ -12,6 +12,7 @@
 8. [API and SDK workflow](api-and-sdk.md)
 9. [V2 handoff](v2-handoff.md)
 10. [Roadmap](roadmap.md)
+11. [Using AI Workflow OS](using-ai-workflow.md)
 
 Context vận hành và prompt chuyển chat nằm tại [`.agents/README.md`](../.agents/README.md), không phải trong `docs/`.
 
