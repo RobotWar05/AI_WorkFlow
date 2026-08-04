@@ -9,6 +9,7 @@ import sys
 ROOT = Path(__file__).resolve().parents[1]
 COMMANDS = (
     (sys.executable, "-B", "tools/manage_skills.py", "validate"),
+    (sys.executable, "-B", "tools/validate_context_control_plane.py"),
     (sys.executable, "-B", "tools/validate_evals.py"),
     (sys.executable, "-B", "tools/workflowctl.py", "validate"),
     (sys.executable, "-B", "-m", "unittest", "discover", "-s", "tests", "-p", "test_*.py"),

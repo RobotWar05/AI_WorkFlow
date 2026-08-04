@@ -3,6 +3,7 @@
   "skills": [
     {"name":"evidence-research","status":"draft","profile":["engineering-core","embedded"],"source":"local"},
     {"name":"architecture-first","status":"draft","profile":["engineering-core","embedded","frontend"],"source":"local"},
+    {"name":"manage-project-context","status":"draft","profile":["context"],"source":"local","writes_require_approval":true},
     {"name":"systematic-debugging","status":"draft","profile":["engineering-core","embedded"],"source":"local"},
     {"name":"verify-before-completion","status":"draft","profile":["engineering-core","embedded","frontend"],"source":"local"},
     {"name":"minimal-implementation","status":"draft","profile":["minimal"],"source":"dietrichgebert-ponytail","implicit":false},

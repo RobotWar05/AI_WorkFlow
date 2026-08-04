@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Context"
+  short_description: "Maintain concise project snapshots and handoffs."
+  default_prompt: "Use $manage-project-context to prepare a verified session handoff."

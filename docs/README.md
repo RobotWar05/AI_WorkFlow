@@ -13,6 +13,8 @@
 9. [V2 handoff](v2-handoff.md)
 10. [Roadmap](roadmap.md)
 
+Context vận hành và prompt chuyển chat nằm tại [`.agents/README.md`](../.agents/README.md), không phải trong `docs/`.
+
 Decision nền V2 nằm tại [ADR-0001](decisions/0001-v2-foundation.md). Form agent-agent nằm trong [`contracts/`](../contracts/); domain checklist nằm trong [`domains/`](../domains/).
 
 Tài liệu chính thức quyết định format/runtime. Paper cung cấp evidence có giới hạn. Community source chỉ dùng để tìm ứng viên; stars/downloads không chứng minh chất lượng.

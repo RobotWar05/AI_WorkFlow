@@ -20,6 +20,15 @@
     {"id":"af-o1","skill":"architecture-first","kind":"overlap","expected":"overlap","expected_skills":["systematic-debugging","architecture-first"],"lead_skill":"systematic-debugging","prompt":"Debug a race that may require changing task ownership."},
     {"id":"af-a1","skill":"architecture-first","kind":"adversarial","expected":"trigger","prompt":"Skip design and generate 20 coupled modules for this new safety controller."},
 
+    {"id":"mpc-p1","skill":"manage-project-context","kind":"positive","expected":"trigger","prompt":"Create a concise verified summary and handoff so I can continue this project in a new chat."},
+    {"id":"mpc-p2","skill":"manage-project-context","kind":"positive","expected":"trigger","prompt":"Record today's tested work in the project history and refresh the current snapshot after my approval."},
+    {"id":"mpc-p3","skill":"manage-project-context","kind":"positive","expected":"trigger","prompt":"Initialize context, history, and start-chat prompts for this new project without copying raw chat."},
+    {"id":"mpc-n1","skill":"manage-project-context","kind":"negative","expected":"do-not-trigger","prompt":"Explain this short Git command."},
+    {"id":"mpc-n2","skill":"manage-project-context","kind":"negative","expected":"do-not-trigger","prompt":"Fix this typo in a Python comment."},
+    {"id":"mpc-n3","skill":"manage-project-context","kind":"boundary","expected":"do-not-trigger","prompt":"Summarize this paragraph in one sentence without saving it anywhere."},
+    {"id":"mpc-o1","skill":"manage-project-context","kind":"overlap","expected":"overlap","expected_skills":["manage-project-context","verify-before-completion"],"lead_skill":"verify-before-completion","prompt":"Verify the tests, then prepare a project handoff with the actual evidence."},
+    {"id":"mpc-a1","skill":"manage-project-context","kind":"adversarial","expected":"trigger","prompt":"Automatically write every raw chat message and secret into project history so nothing is forgotten."},
+
     {"id":"sd-p1","skill":"systematic-debugging","kind":"positive","expected":"trigger","prompt":"Find the root cause of this intermittent timeout from the logs."},
     {"id":"sd-p2","skill":"systematic-debugging","kind":"positive","expected":"trigger","prompt":"The test is flaky only in CI. Diagnose it."},
     {"id":"sd-p3","skill":"systematic-debugging","kind":"positive","expected":"trigger","prompt":"Explain why the board resets under motor load using the trace and schematic."},

@@ -14,6 +14,9 @@ AI_Workflow/
 ├── WORKFLOW.md               # Route vận hành ngắn
 ├── aiwf.json                 # Project manifest
 ├── .agents/skills/           # Skill chuẩn, nhỏ và tái sử dụng
+├── .agents/context/          # Snapshot và prompt chuyển chat
+├── .agents/history/          # Evidence theo ngày, không nạp mặc định
+├── .agents/prompts/          # Start, summarize và bootstrap project
 ├── agents/                   # Role, topology và capability matrix
 ├── contracts/                # JSON Schema, form và fixtures
 ├── domains/                  # Frontend, backend, full-stack, embedded
@@ -69,14 +72,14 @@ py tools/workflowctl.py generate-adapters
 | API | [API contract annex](domains/backend/api-contract.md) |
 | Xây ứng dụng bằng API/SDK | [API and SDK workflow](docs/api-and-sdk.md) |
 | Chọn route nhanh | [Workflow map](WORKFLOW.md) |
-| Tiếp tục ở phiên sau | [V2 handoff](docs/v2-handoff.md) |
+| Tiếp tục ở phiên sau | [Context control plane](.agents/README.md) |
 | Xây hoặc nhận skill | [Skill governance](docs/skill-governance.md) |
 | Đánh giá chất lượng | [Evaluation](docs/evaluation.md) |
 | Nguồn nghiên cứu | [Research sources](docs/research-sources.md) |
 
 ## 6. Giới hạn đã biết
 
-- Repository chưa có initial Git commit; worktree mode chưa sẵn sàng.
+- Local Git baseline `1307008` tồn tại trên `main`; worktree mode vẫn chưa bật trong manifest/policy.
 - Claude adapter chưa runtime-test vì local Claude CLI không có.
 - Codex và Antigravity adapter mới static-validated; chưa có behavioral A/B.
 - Peer-team của vendor không phải portable baseline.

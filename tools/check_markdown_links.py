@@ -10,7 +10,7 @@ from urllib.parse import unquote
 ROOT = Path(__file__).resolve().parents[1]
 ROOT_FILES = (ROOT / "README.md", ROOT / "AGENTS.md", ROOT / "THIRD_PARTY_NOTICES.md")
 ROOTS = (
-    ROOT / ".agents" / "skills",
+    ROOT / ".agents",
     ROOT / "adapters",
     ROOT / "contracts",
     ROOT / "backend",
