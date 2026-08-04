@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {"id": "project-valid", "schema": "project.schema.json", "fixture": "aiwf.json", "expected_valid": true},
+    {"id": "work-item-valid", "schema": "work-item.schema.json", "fixture": "contracts/examples/valid/work-item.json", "expected_valid": true},
+    {"id": "delegation-valid", "schema": "delegation-packet.schema.json", "fixture": "contracts/examples/valid/delegation-packet.json", "expected_valid": true},
+    {"id": "artifact-valid", "schema": "artifact.schema.json", "fixture": "contracts/examples/valid/artifact.json", "expected_valid": true},
+    {"id": "handoff-valid", "schema": "handoff.schema.json", "fixture": "contracts/examples/valid/handoff.json", "expected_valid": true},
+    {"id": "integration-valid", "schema": "integration-plan.schema.json", "fixture": "contracts/examples/valid/integration-plan.json", "expected_valid": true},
+    {"id": "quality-valid", "schema": "quality-gate.schema.json", "fixture": "contracts/examples/valid/quality-gate.json", "expected_valid": true},
+    {"id": "status-valid", "schema": "status-event.schema.json", "fixture": "contracts/examples/valid/status-event.json", "expected_valid": true},
+    {"id": "eval-case-valid", "schema": "eval-case.schema.json", "fixture": "contracts/examples/valid/eval-case.json", "expected_valid": true},
+    {"id": "eval-run-valid", "schema": "eval-run.schema.json", "fixture": "contracts/examples/valid/eval-run.json", "expected_valid": true},
+    {"id": "tool-contract-valid", "schema": "tool-contract.schema.json", "fixture": "contracts/examples/valid/tool-contract.json", "expected_valid": true},
+    {"id": "tool-external-invalid-no-approval", "schema": "tool-contract.schema.json", "fixture": "contracts/examples/invalid/tool-external-no-approval.json", "expected_valid": false},
+    {"id": "work-item-invalid-no-acceptance", "schema": "work-item.schema.json", "fixture": "contracts/examples/invalid/work-item-no-acceptance.json", "expected_valid": false},
+    {"id": "delegation-invalid-worktree-no-base", "schema": "delegation-packet.schema.json", "fixture": "contracts/examples/invalid/delegation-worktree-no-base.json", "expected_valid": false},
+    {"id": "handoff-invalid-complete-no-evidence", "schema": "handoff.schema.json", "fixture": "contracts/examples/invalid/handoff-complete-no-evidence.json", "expected_valid": false},
+    {"id": "quality-invalid-pass-with-blocker", "schema": "quality-gate.schema.json", "fixture": "contracts/examples/invalid/quality-gate-pass-with-blocker.json", "expected_valid": false},
+    {"id": "status-invalid-time", "schema": "status-event.schema.json", "fixture": "contracts/examples/invalid/status-event-bad-time.json", "expected_valid": false}
+  ]
+}

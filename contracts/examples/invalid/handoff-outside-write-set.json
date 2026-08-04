@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "HO-BAD-SCOPE",
+  "task_id": "TASK-DEMO-001",
+  "delegation_id": "DEL-DEMO-API",
+  "from": "backend-worker",
+  "to": "integrator",
+  "status": "completed",
+  "result": "Touched a protected deployment file.",
+  "artifacts": [],
+  "files_touched": ["deploy/production.yml"],
+  "decisions": [],
+  "checks": [{"command": "inspect", "exit_code": 0, "evidence": "file exists", "result": "passed"}],
+  "acceptance_results": [
+    {"criterion_id": "AC-1", "result": "passed", "evidence": "claim only"},
+    {"criterion_id": "AC-2", "result": "passed", "evidence": "claim only"}
+  ],
+  "assumptions": [],
+  "unknowns": [],
+  "remaining": [],
+  "risks": ["Protected path changed"],
+  "conflicts": [],
+  "approvals": [],
+  "integration_notes": [],
+  "next_action": "Reject handoff.",
+  "base_revision": null,
+  "output_digest": null
+}

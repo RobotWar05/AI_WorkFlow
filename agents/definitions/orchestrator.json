@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "orchestrator",
+  "display_name": "Orchestrator",
+  "purpose": "Route, decompose and supervise work without owning specialist implementation by default.",
+  "route_when": ["A task has multiple bounded workstreams or needs explicit coordination."],
+  "do_not_route_when": ["A single owner can complete the task with lower coordination cost."],
+  "capabilities": ["route", "decompose", "delegate", "track-state", "escalate"],
+  "non_goals": ["Silently expand authority", "Mark unverified work complete"],
+  "required_context": ["work-item/v1", "approval policy", "available capability cards"],
+  "tools_allowed": ["filesystem.read", "shell.read", "web.read", "agent.delegate"],
+  "tools_denied": ["external.write"],
+  "write_scope": "none",
+  "output_contracts": ["delegation-packet/v1", "status-event/v1"],
+  "risk_limits": ["Parent authority is an upper bound, not an automatic grant to workers."],
+  "runtime_constraints": ["Bound concurrency and retries; preserve one authoritative task state."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

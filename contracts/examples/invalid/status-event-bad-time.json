@@ -1,0 +1,11 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "EVT-BAD-001",
+  "task_id": "TASK-DEMO-001",
+  "attempt_id": "ATT-DEMO-001",
+  "timestamp": "not-a-date",
+  "actor": "worker",
+  "from_state": "WORKING",
+  "to_state": "COMPLETED",
+  "reason": "Invalid timestamp and unauthorized transition."
+}

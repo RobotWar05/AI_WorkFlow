@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "runtime": "claude",
+  "adapter_version": "1.0.0",
+  "supported_version_range": "current documented Claude Code agent format",
+  "maturity": "static-only",
+  "capabilities": ["custom-agent", "subagent", "tool-allowlist", "worktree-isolation"],
+  "field_mapping": {"agent_id": "name", "purpose": "description", "tools_allowed": "tools", "constraints": "markdown body"},
+  "unsupported_fields": ["stable portable peer-team semantics"],
+  "fallback_policy": "fail-closed",
+  "generated_paths": [".claude/agents/*.md"],
+  "validator": "py tools/workflowctl.py check-adapters",
+  "verified_at": null,
+  "notes": ["Claude CLI was not available locally; agent-team capability remains experimental."]
+}

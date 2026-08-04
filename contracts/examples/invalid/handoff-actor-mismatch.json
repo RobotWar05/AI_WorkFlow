@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "HO-BAD-ACTOR",
+  "task_id": "TASK-DEMO-001",
+  "delegation_id": "DEL-DEMO-API",
+  "from": "different-worker",
+  "to": "integrator",
+  "status": "completed",
+  "result": "Result returned by a different actor.",
+  "artifacts": [],
+  "files_touched": ["src/api/example.py"],
+  "decisions": [],
+  "checks": [{"command": "test", "exit_code": 0, "evidence": "passed", "result": "passed"}],
+  "acceptance_results": [
+    {"criterion_id": "AC-1", "result": "passed", "evidence": "passed"},
+    {"criterion_id": "AC-2", "result": "passed", "evidence": "passed"}
+  ],
+  "assumptions": [], "unknowns": [], "remaining": [], "risks": [], "conflicts": [], "approvals": [], "integration_notes": [],
+  "next_action": "Reject actor mismatch.",
+  "base_revision": null
+}

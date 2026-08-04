@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "integration_id": "INT-BAD-OWNER",
+  "parent_task_id": "TASK-DEMO-001",
+  "integrator": "orchestrator",
+  "target_branch": null,
+  "baseline_revision": null,
+  "ownership": [{"owner": "backend-worker", "paths": ["src/api/"], "access": "exclusive-write"}],
+  "dependency_order": ["implementation"],
+  "merge_order": ["DEL-DEMO-API"],
+  "contract_versions": ["work-item/v1"],
+  "conflict_policy": "reject",
+  "checks": ["Validate"],
+  "rollback": ["Reject integration"],
+  "final_answer_owner": "orchestrator"
+}

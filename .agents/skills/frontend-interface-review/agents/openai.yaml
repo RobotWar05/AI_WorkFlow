@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Interface Review"
+  short_description: "Review interface quality and accessibility"
+  default_prompt: "Use $frontend-interface-review to audit this interface for usability accessibility and consistency."

@@ -1,0 +1,10 @@
+{
+  "name": "frontend",
+  "description": "Architecture, intentional visual direction, interface review, and verification.",
+  "skills": [
+    "architecture-first",
+    "frontend-design-direction",
+    "frontend-interface-review",
+    "verify-before-completion"
+  ]
+}

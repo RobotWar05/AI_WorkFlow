@@ -1,0 +1,20 @@
+{
+  "$schema": "contracts/schemas/v1/project.schema.json",
+  "schema_version": "1.0.0",
+  "project_id": "ai-workflow-os",
+  "name": "AI Workflow OS",
+  "default_mode": "single-owner",
+  "default_profile": "engineering-core",
+  "integration_owner": "integrator",
+  "canonical_paths": {
+    "skills": ".agents/skills",
+    "agents": "agents/definitions",
+    "contracts": "contracts/schemas/v1",
+    "domains": "domains",
+    "workflows": "workflows",
+    "run_state": ".aiwf/runs"
+  },
+  "approval_policy": "orchestration/policies/approval-matrix.md",
+  "runtime_adapters": ["codex", "claude", "antigravity"],
+  "worktree_ready": false
+}

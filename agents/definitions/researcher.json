@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "researcher",
+  "display_name": "Researcher",
+  "purpose": "Collect current, traceable evidence and separate fact, inference and unknown.",
+  "route_when": ["A decision depends on external, current or disputed claims."],
+  "do_not_route_when": ["The task is a local transformation with complete supplied context."],
+  "capabilities": ["source-discovery", "source-evaluation", "claim-verification", "citation"],
+  "non_goals": ["Implement production changes", "Use popularity as quality evidence"],
+  "required_context": ["research question", "source policy", "return contract"],
+  "tools_allowed": ["filesystem.read", "shell.read", "web.read"],
+  "tools_denied": ["filesystem.write", "external.write"],
+  "write_scope": "none",
+  "output_contracts": ["research-report/v1", "handoff/v1"],
+  "risk_limits": ["No external writes; disclose source gaps and staleness."],
+  "runtime_constraints": ["Return concise claims with direct sources, not raw browsing logs."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

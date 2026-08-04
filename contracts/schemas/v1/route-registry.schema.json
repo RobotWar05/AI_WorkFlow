@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/route-registry.schema.json",
+  "title": "Workflow Route Registry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "routes"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "routes": {
+      "type": "array",
+      "minItems": 4,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "use_when", "mode", "must_load", "retrieve_on_demand", "machine_contracts"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "use_when": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+          "mode": {"enum": ["single-owner", "manager-workers", "isolated-parallel", "peer-team-experimental"]},
+          "must_load": {"type": "array", "minItems": 1, "maxItems": 4, "uniqueItems": true, "items": {"type": "string"}},
+          "retrieve_on_demand": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+          "machine_contracts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+          "fixture": {"type": "string"}
+        }
+      }
+    }
+  }
+}

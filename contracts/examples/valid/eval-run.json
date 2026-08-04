@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "run_id": "RUN-DEMO-001",
+  "case_id": "EVAL-DEMO-001",
+  "runtime": "codex",
+  "model": "record-at-run-time",
+  "started_at": "2026-08-03T10:00:00+07:00",
+  "finished_at": "2026-08-03T10:05:00+07:00",
+  "outcome": "passed",
+  "guardrail_results": ["No out-of-scope writes"],
+  "routing_errors": 0,
+  "decomposition_gaps": 0,
+  "duplicate_work": 0,
+  "write_conflicts": 0,
+  "permission_violations": 0,
+  "metrics": {"turns": 4, "tool_calls": 10, "input_tokens": null, "output_tokens": null, "elapsed_seconds": 300},
+  "artifacts": ["ART-DEMO-API"],
+  "human_review": "pending"
+}

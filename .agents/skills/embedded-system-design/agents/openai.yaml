@@ -1,0 +1,4 @@
+interface:
+  display_name: "Embedded System Design"
+  short_description: "Design reliable embedded systems under constraints"
+  default_prompt: "Use $embedded-system-design to design this firmware around timing hardware and failure constraints."

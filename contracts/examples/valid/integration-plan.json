@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "integration_id": "INT-DEMO-001",
+  "parent_task_id": "TASK-DEMO-001",
+  "integrator": "integrator",
+  "target_branch": null,
+  "baseline_revision": null,
+  "ownership": [
+    {"owner": "backend-worker", "paths": ["src/api/", "tests/api/"], "access": "exclusive-write"},
+    {"owner": "integrator", "paths": ["src/api/", "tests/api/"], "access": "read-only"}
+  ],
+  "dependency_order": ["API contract", "backend implementation", "verification"],
+  "merge_order": ["DEL-DEMO-API"],
+  "contract_versions": ["work-item/v1", "handoff/v1"],
+  "conflict_policy": "reject",
+  "checks": ["Validate handoff", "Rerun focused tests", "Inspect scope"],
+  "rollback": ["Revert only integrated task changes after identifying exact paths"],
+  "final_answer_owner": "integrator"
+}

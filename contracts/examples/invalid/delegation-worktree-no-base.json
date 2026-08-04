@@ -1,0 +1,17 @@
+{
+  "schema_version": "1.0.0",
+  "delegation_id": "DEL-BAD-WORKTREE",
+  "parent_task_id": "TASK-DEMO-001",
+  "delegate": "worker",
+  "role": "backend-engineer",
+  "objective": "Write in a worktree without a base revision.",
+  "read_set": ["src/"],
+  "write_set": ["src/"],
+  "forbidden_actions": ["External write"],
+  "workspace_isolation": "worktree",
+  "budget": {"max_turns": 2, "max_minutes": 5},
+  "acceptance_criteria": ["AC-1"],
+  "stop_conditions": ["No base"],
+  "escalation_conditions": ["Need baseline"],
+  "return_contract": "handoff/v1"
+}

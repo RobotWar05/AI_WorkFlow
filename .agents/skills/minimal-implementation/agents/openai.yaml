@@ -1,0 +1,6 @@
+interface:
+  display_name: "Minimal Implementation"
+  short_description: "Choose the smallest safe working change"
+  default_prompt: "Use $minimal-implementation to reduce this solution without removing required safeguards."
+policy:
+  allow_implicit_invocation: false

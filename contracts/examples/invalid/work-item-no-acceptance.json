@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "TASK-BAD-001",
+  "title": "Invalid task",
+  "objective": "Show that acceptance is required.",
+  "mode": "single-owner",
+  "risk_level": "low",
+  "integrator": "integrator",
+  "scope": {"include": [], "exclude": []},
+  "context_manifest": {"must_load": [], "retrieve_on_demand": [], "reference_only": [], "excluded": []},
+  "authority": {"read_paths": [], "write_paths": [], "protected_paths": [], "max_effect_class": "E0", "approval_gates": []},
+  "budget": {"max_turns": 2, "max_minutes": 5, "max_tool_calls": 5, "max_children": 0, "max_concurrency": 1},
+  "verification_plan": ["Inspect output"],
+  "deliverables": ["Output"],
+  "status": "DRAFT"
+}

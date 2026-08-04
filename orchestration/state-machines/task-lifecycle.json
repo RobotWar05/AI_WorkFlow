@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "initial_state": "DRAFT",
+  "states": ["DRAFT", "READY", "ASSIGNED", "WORKING", "READY_FOR_REVIEW", "READY_FOR_INTEGRATION", "INTEGRATING", "VERIFIED", "COMPLETED", "INPUT_REQUIRED", "APPROVAL_REQUIRED", "BLOCKED", "FAILED", "REJECTED", "CANCELED", "REWORK"],
+  "terminal_states": ["COMPLETED", "REJECTED", "CANCELED"],
+  "transitions": [
+    {"from": "DRAFT", "to": "READY", "gate": "G0_BRIEF"},
+    {"from": "READY", "to": "ASSIGNED", "gate": "G1_DELEGATION"},
+    {"from": "ASSIGNED", "to": "WORKING", "gate": "owner-started"},
+    {"from": "WORKING", "to": "READY_FOR_REVIEW", "gate": "deliverable-submitted"},
+    {"from": "READY_FOR_REVIEW", "to": "READY_FOR_INTEGRATION", "gate": "G2_WORKER"},
+    {"from": "READY_FOR_INTEGRATION", "to": "INTEGRATING", "gate": "G3_INTEGRATION"},
+    {"from": "INTEGRATING", "to": "VERIFIED", "gate": "G4_VERIFICATION"},
+    {"from": "VERIFIED", "to": "COMPLETED", "gate": "G5_RELEASE"},
+    {"from": "WORKING", "to": "INPUT_REQUIRED", "gate": "missing-material-input"},
+    {"from": "WORKING", "to": "APPROVAL_REQUIRED", "gate": "authority-expansion"},
+    {"from": "WORKING", "to": "BLOCKED", "gate": "external-or-repeated-blocker"},
+    {"from": "WORKING", "to": "FAILED", "gate": "attempt-failed"},
+    {"from": "READY_FOR_REVIEW", "to": "REWORK", "gate": "review-failed"},
+    {"from": "INTEGRATING", "to": "REWORK", "gate": "integration-failed"},
+    {"from": "REWORK", "to": "ASSIGNED", "gate": "rework-packet-ready"}
+  ],
+  "restricted_transitions": [
+    {"to": "INTEGRATING", "allowed_roles": ["integrator"]},
+    {"to": "VERIFIED", "allowed_roles": ["integrator"]},
+    {"to": "COMPLETED", "allowed_roles": ["integrator"]}
+  ]
+}

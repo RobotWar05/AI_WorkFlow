@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "runtime": "antigravity",
+  "adapter_version": "1.0.0",
+  "supported_version_range": ">=1.1.10 observed CLI",
+  "maturity": "static-only",
+  "capabilities": ["custom-agent", "subagent", "tool-allowlist", "branch-workspace"],
+  "field_mapping": {"agent_id": "name", "purpose": "description", "tools_allowed": "tools", "constraints": "markdown body"},
+  "unsupported_fields": ["stable portable peer-team semantics", "invocation workspace mode in static definition"],
+  "fallback_policy": "fail-closed",
+  "generated_paths": [".agents/agents/*.md"],
+  "validator": "py tools/workflowctl.py check-adapters",
+  "verified_at": "2026-08-03",
+  "notes": ["Use only documented tool names; unmapped names may cause validation problems."]
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "artifact_id": "ART-DEMO-API",
+  "task_id": "TASK-DEMO-001",
+  "producer": "backend-worker",
+  "kind": "source",
+  "revision": "attempt-1",
+  "location": "src/api/example.py",
+  "format": "text/x-python",
+  "classification": "internal",
+  "summary": "Endpoint implementation with boundary validation.",
+  "provenance": ["docs/api.md", "delegation DEL-DEMO-API"],
+  "consumers": ["integrator"],
+  "acceptance_refs": ["AC-1", "AC-2"],
+  "verification_evidence": ["Focused tests passed in attempt 1"],
+  "digest_sha256": null,
+  "status": "submitted"
+}

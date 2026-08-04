@@ -1,0 +1,4 @@
+interface:
+  display_name: "Verify Before Completion"
+  short_description: "Verify scope tests and acceptance before done"
+  default_prompt: "Use $verify-before-completion to check whether this task is actually complete."

@@ -1,0 +1,19 @@
+{
+  "schema_version": "1.0.0",
+  "integration_id": "INT-BAD-OVERLAP",
+  "parent_task_id": "TASK-DEMO-001",
+  "integrator": "integrator",
+  "target_branch": null,
+  "baseline_revision": null,
+  "ownership": [
+    {"owner": "backend-worker", "paths": ["src/api/", "tests/api/"], "access": "exclusive-write"},
+    {"owner": "second-worker", "paths": ["src/api/"], "access": "exclusive-write"}
+  ],
+  "dependency_order": ["API contract", "two conflicting implementations"],
+  "merge_order": ["DEL-DEMO-API", "DEL-DEMO-OVERLAP"],
+  "contract_versions": ["work-item/v1", "handoff/v1"],
+  "conflict_policy": "reject",
+  "checks": ["Reject overlap"],
+  "rollback": ["Do not integrate either overlapping write until ownership is corrected"],
+  "final_answer_owner": "integrator"
+}

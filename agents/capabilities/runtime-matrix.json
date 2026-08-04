@@ -1,0 +1,16 @@
+{
+  "schema_version": "1.0.0",
+  "reviewed_at": "2026-08-03",
+  "capabilities": {
+    "canonical_single_owner": {"codex": "supported", "claude": "supported", "antigravity": "supported"},
+    "parent_managed_subagents": {"codex": "supported", "claude": "supported", "antigravity": "supported"},
+    "custom_agent_definitions": {"codex": "supported-evolving-format", "claude": "supported", "antigravity": "supported"},
+    "worktree_isolation": {"codex": "surface-dependent", "claude": "supported", "antigravity": "branch-mode"},
+    "peer_teams": {"codex": "not-portable-baseline", "claude": "experimental", "antigravity": "preview"},
+    "programmatic_sdk": {"codex": "agents-sdk-or-codex-sdk", "claude": "agent-sdk", "antigravity": "use-google-adk-for-apps"},
+    "remote_a2a": {"codex": "adapter-required", "claude": "adapter-required", "antigravity": "adapter-required"}
+  },
+  "portable_baseline": ["single-owner", "manager-workers", "artifact handoff", "bounded budget", "parent-owned integration"],
+  "feature_flags": ["peer_team_claude_experimental", "teamwork_antigravity_preview", "remote_a2a"],
+  "notes": ["Capability labels are documentation snapshots, not runtime test evidence.", "Adapter validation must fail instead of silently dropping a required security field."]
+}

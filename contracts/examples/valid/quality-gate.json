@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "gate_id": "GATE-DEMO-G4",
+  "task_id": "TASK-DEMO-001",
+  "stage": "G4_VERIFICATION",
+  "evaluator": "verifier",
+  "artifacts": ["ART-DEMO-API"],
+  "criteria": ["AC-1", "AC-2"],
+  "checks": [{"type": "deterministic", "method": "focused test", "expected": "all pass", "actual": "2 passed", "evidence": "pytest output", "result": "passed"}],
+  "overall": "passed",
+  "blockers": [],
+  "waiver": null
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": "1.0.0",
+  "routes": [
+    {
+      "id": "single-backend-api",
+      "use_when": ["One owner changes a backend endpoint or API contract without a parallel branch."],
+      "mode": "single-owner",
+      "must_load": ["workflows/single-agent-delivery.md", "domains/backend/delivery-annex.md", "domains/backend/api-contract.md", "contracts/templates/task-brief.md"],
+      "retrieve_on_demand": ["domains/backend/quality-gates.md", "contracts/templates/quality-gate.md"],
+      "machine_contracts": ["contracts/schemas/v1/work-item.schema.json", "contracts/schemas/v1/quality-gate.schema.json"]
+    },
+    {
+      "id": "delegated-frontend",
+      "use_when": ["A bounded frontend implementation or review can return to a parent without peer coordination."],
+      "mode": "manager-workers",
+      "must_load": ["workflows/delegated-task.md", "domains/frontend/delivery-annex.md", "contracts/templates/delegation-packet.md", "contracts/templates/worker-handoff.md"],
+      "retrieve_on_demand": ["domains/frontend/quality-gates.md", "workflows/integrate-agent-work.md"],
+      "machine_contracts": ["contracts/schemas/v1/delegation-packet.schema.json", "contracts/schemas/v1/handoff.schema.json"]
+    },
+    {
+      "id": "parallel-fullstack",
+      "use_when": ["Frontend and backend have an accepted shared contract, disjoint write-sets, an integrator, and a Git baseline."],
+      "mode": "isolated-parallel",
+      "must_load": ["workflows/multi-agent-delivery.md", "domains/fullstack/integration-annex.md", "contracts/templates/integration-plan.md", "contracts/templates/delegation-packet.md"],
+      "retrieve_on_demand": ["domains/frontend/delivery-annex.md", "domains/backend/delivery-annex.md", "workflows/integrate-agent-work.md"],
+      "machine_contracts": ["contracts/schemas/v1/integration-plan.schema.json", "contracts/schemas/v1/delegation-packet.schema.json", "contracts/schemas/v1/handoff.schema.json"]
+    },
+    {
+      "id": "api-sdk-application",
+      "use_when": ["An application integrates a provider agent SDK, a typed tool boundary, or a remote A2A adapter."],
+      "mode": "single-owner",
+      "must_load": ["workflows/api-sdk-application.md", "docs/api-and-sdk.md", "contracts/templates/tool-contract.md", "contracts/templates/task-brief.md"],
+      "retrieve_on_demand": ["domains/backend/api-contract.md", "workflows/evaluate-agent-system.md"],
+      "machine_contracts": ["contracts/schemas/v1/work-item.schema.json", "contracts/schemas/v1/tool-contract.schema.json", "contracts/schemas/v1/eval-case.schema.json"],
+      "fixture": "evals/fixtures/api-sdk/application-work-item.json"
+    }
+  ]
+}

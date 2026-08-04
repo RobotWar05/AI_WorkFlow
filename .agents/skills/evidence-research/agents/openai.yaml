@@ -1,0 +1,4 @@
+interface:
+  display_name: "Evidence Research"
+  short_description: "Research with source and certainty discipline"
+  default_prompt: "Use $evidence-research to investigate this claim with traceable sources and separate facts from inference."

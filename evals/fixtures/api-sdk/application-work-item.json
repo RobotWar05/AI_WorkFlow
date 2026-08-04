@@ -1,0 +1,20 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "TASK-API-SDK-001",
+  "title": "Add a provider-neutral agent application boundary",
+  "objective": "Implement one typed tool boundary without external writes or provider-specific business state.",
+  "mode": "single-owner",
+  "domain": "backend",
+  "risk_level": "medium",
+  "owner": "backend-engineer",
+  "integrator": "integrator",
+  "scope": {"include": ["src/agent_app/", "tests/agent_app/"], "exclude": ["deploy/", ".env", "production/"]},
+  "context_manifest": {"must_load": ["workflows/api-sdk-application.md", "contracts/templates/tool-contract.md"], "retrieve_on_demand": ["docs/api-and-sdk.md"], "reference_only": [], "excluded": ["evals/results/raw/"], "max_tokens": null},
+  "authority": {"read_paths": ["src/", "tests/", "docs/"], "write_paths": ["src/agent_app/", "tests/agent_app/"], "protected_paths": ["deploy/", ".env", "production/"], "max_effect_class": "E1", "approval_gates": ["Any external write, deploy or credential action"]},
+  "budget": {"max_turns": 12, "max_minutes": 45, "max_tool_calls": 60, "max_children": 0, "max_concurrency": 1, "max_tokens": null},
+  "verification_plan": ["Validate input/output schemas", "Run focused tool failure tests", "Inspect traces for secrets"],
+  "deliverables": ["Provider-neutral application interface", "One typed tool contract", "Focused tests"],
+  "acceptance_criteria": [{"id": "AC-1", "criterion": "Application rejects invalid tool input before provider execution."}, {"id": "AC-2", "criterion": "External-effect tool requires action-time approval."}],
+  "dependencies": [],
+  "status": "READY"
+}

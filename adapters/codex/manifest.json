@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0.0",
+  "runtime": "codex",
+  "adapter_version": "1.0.0",
+  "supported_version_range": ">=0.146.0-alpha.9.2",
+  "maturity": "static-only",
+  "capabilities": ["custom-agent", "subagent", "parent-integration"],
+  "field_mapping": {"agent_id": "name", "purpose": "description", "constraints": "developer_instructions", "write_scope": "sandbox_mode"},
+  "unsupported_fields": ["portable peer-team semantics", "portable worktree mode in agent definition"],
+  "fallback_policy": "fail-closed",
+  "generated_paths": [".codex/agents/*.toml"],
+  "validator": "py tools/workflowctl.py check-adapters",
+  "verified_at": "2026-08-03",
+  "notes": ["Custom-agent format may evolve; invocation-time sandbox remains authoritative."]
+}

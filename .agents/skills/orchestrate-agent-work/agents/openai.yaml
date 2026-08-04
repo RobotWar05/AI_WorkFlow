@@ -1,0 +1,6 @@
+interface:
+  display_name: "Orchestrate Agent Work"
+  short_description: "Route and coordinate bounded agent work"
+  default_prompt: "Use $orchestrate-agent-work to choose the smallest safe execution mode and define handoffs."
+policy:
+  allow_implicit_invocation: true

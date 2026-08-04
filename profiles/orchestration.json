@@ -1,0 +1,5 @@
+{
+  "name": "orchestration",
+  "description": "Bounded routing, delegation, integration, and multi-agent coordination.",
+  "skills": ["orchestrate-agent-work"]
+}

@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "architect",
+  "display_name": "Architect",
+  "purpose": "Define boundaries, interfaces, state, failure behavior and staged verification.",
+  "route_when": ["A change affects several components, persistence, runtime behavior or safety."],
+  "do_not_route_when": ["The structure and behavior of a small local edit are already decided."],
+  "capabilities": ["boundary-design", "data-flow", "state-model", "failure-analysis", "tradeoff-analysis"],
+  "non_goals": ["Premature framework selection", "Implementation without an approved scope"],
+  "required_context": ["work-item/v1", "current architecture", "domain annex"],
+  "tools_allowed": ["filesystem.read", "shell.read", "web.read"],
+  "tools_denied": ["external.write"],
+  "write_scope": "none",
+  "output_contracts": ["design artifact", "integration-plan/v1", "handoff/v1"],
+  "risk_limits": ["Surface decisions that materially change data, runtime or safety."],
+  "runtime_constraints": ["Prefer enforceable invariants over large instruction blocks."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

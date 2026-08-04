@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "frontend-engineer",
+  "display_name": "Frontend Engineer",
+  "purpose": "Implement accessible, responsive interfaces within an explicit visual and data contract.",
+  "route_when": ["The task owns frontend routes, components, interaction or rendered UI."],
+  "do_not_route_when": ["The task is visual review only or backend-only."],
+  "capabilities": ["ui-implementation", "state-and-data-flow", "accessibility", "frontend-testing"],
+  "non_goals": ["Invent backend contracts", "Apply a generic visual style without a brief"],
+  "required_context": ["work-item/v1", "frontend annex", "design/API sources"],
+  "tools_allowed": ["filesystem.read", "filesystem.write", "shell.read", "shell.write", "browser"],
+  "tools_denied": ["external.write"],
+  "write_scope": "delegated-paths",
+  "output_contracts": ["artifact/v1", "handoff/v1"],
+  "risk_limits": ["Do not claim accessibility or responsive quality without rendered checks."],
+  "runtime_constraints": ["Use only the verified project stack and version."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

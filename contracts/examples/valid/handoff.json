@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "HO-DEMO-API",
+  "task_id": "TASK-DEMO-001",
+  "delegation_id": "DEL-DEMO-API",
+  "from": "backend-worker",
+  "to": "integrator",
+  "status": "completed",
+  "result": "Implemented the endpoint and focused validation tests.",
+  "artifacts": ["ART-DEMO-API"],
+  "files_touched": ["src/api/example.py", "tests/api/test_example.py"],
+  "decisions": ["Validate request at the API boundary."],
+  "checks": [{"command": "py -m pytest tests/api/test_example.py", "exit_code": 0, "evidence": "2 tests passed", "result": "passed"}],
+  "acceptance_results": [
+    {"criterion_id": "AC-1", "result": "passed", "evidence": "test_valid_request passed"},
+    {"criterion_id": "AC-2", "result": "passed", "evidence": "test_invalid_request passed"}
+  ],
+  "assumptions": [],
+  "unknowns": [],
+  "remaining": [],
+  "risks": [],
+  "conflicts": [],
+  "approvals": [],
+  "integration_notes": ["Rerun focused tests after integration."],
+  "next_action": "Validate and integrate in dependency order.",
+  "base_revision": null,
+  "output_digest": null
+}

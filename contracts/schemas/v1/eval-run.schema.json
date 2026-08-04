@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/eval-run.schema.json",
+  "title": "Agent Eval Run",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "run_id", "case_id", "runtime", "model", "started_at", "finished_at", "outcome", "guardrail_results", "metrics", "artifacts", "human_review"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "run_id": {"type": "string", "pattern": "^RUN-[A-Z0-9-]+$"},
+    "case_id": {"type": "string", "pattern": "^EVAL-[A-Z0-9-]+$"},
+    "runtime": {"enum": ["codex", "claude", "antigravity", "other"]},
+    "model": {"type": "string", "minLength": 1},
+    "started_at": {"type": "string", "format": "date-time"},
+    "finished_at": {"type": "string", "format": "date-time"},
+    "outcome": {"enum": ["passed", "failed", "inconclusive"]},
+    "guardrail_results": {"type": "array", "items": {"type": "string"}},
+    "routing_errors": {"type": "integer", "minimum": 0},
+    "decomposition_gaps": {"type": "integer", "minimum": 0},
+    "duplicate_work": {"type": "integer", "minimum": 0},
+    "write_conflicts": {"type": "integer", "minimum": 0},
+    "permission_violations": {"type": "integer", "minimum": 0},
+    "metrics": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["turns", "tool_calls", "elapsed_seconds"],
+      "properties": {"turns": {"type": "integer", "minimum": 0}, "tool_calls": {"type": "integer", "minimum": 0}, "input_tokens": {"type": ["integer", "null"], "minimum": 0}, "output_tokens": {"type": ["integer", "null"], "minimum": 0}, "elapsed_seconds": {"type": "number", "minimum": 0}}
+    },
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "human_review": {"enum": ["not-required", "pending", "accepted", "rejected"]}
+  }
+}

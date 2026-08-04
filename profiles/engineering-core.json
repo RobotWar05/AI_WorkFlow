@@ -1,0 +1,10 @@
+{
+  "name": "engineering-core",
+  "description": "Evidence, architecture, debugging, and completion verification.",
+  "skills": [
+    "evidence-research",
+    "architecture-first",
+    "systematic-debugging",
+    "verify-before-completion"
+  ]
+}

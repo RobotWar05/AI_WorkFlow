@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/capability-card.schema.json",
+  "title": "Agent Capability Card",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "agent_id", "display_name", "purpose", "route_when", "do_not_route_when", "capabilities", "non_goals", "required_context", "tools_allowed", "tools_denied", "write_scope", "output_contracts", "risk_limits", "runtime_constraints", "version", "owner"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"const": "1.0.0"},
+    "agent_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "display_name": {"type": "string", "minLength": 1},
+    "purpose": {"type": "string", "minLength": 1},
+    "route_when": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "do_not_route_when": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "capabilities": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "non_goals": {"type": "array", "items": {"type": "string"}},
+    "required_context": {"type": "array", "items": {"type": "string"}},
+    "tools_allowed": {"type": "array", "uniqueItems": true, "items": {"enum": ["filesystem.read", "filesystem.write", "shell.read", "shell.write", "web.read", "browser", "agent.delegate", "external.write"]}},
+    "tools_denied": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "write_scope": {"enum": ["none", "delegated-paths", "integration-scope"]},
+    "output_contracts": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "risk_limits": {"type": "array", "items": {"type": "string"}},
+    "runtime_constraints": {"type": "array", "items": {"type": "string"}},
+    "version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "owner": {"type": "string", "minLength": 1}
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/integration-plan.schema.json",
+  "title": "Integration Plan",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "integration_id", "parent_task_id", "integrator", "baseline_revision", "ownership", "dependency_order", "merge_order", "conflict_policy", "checks", "rollback", "final_answer_owner"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "integration_id": {"type": "string", "pattern": "^INT-[A-Z0-9-]+$"},
+    "parent_task_id": {"type": "string", "pattern": "^TASK-[A-Z0-9-]+$"},
+    "integrator": {"type": "string", "minLength": 1},
+    "target_branch": {"type": ["string", "null"]},
+    "baseline_revision": {"type": ["string", "null"]},
+    "ownership": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["owner", "paths", "access"],
+        "properties": {"owner": {"type": "string"}, "paths": {"type": "array", "minItems": 1, "items": {"type": "string"}}, "access": {"enum": ["exclusive-write", "read-only", "generated"]}}
+      }
+    },
+    "dependency_order": {"type": "array", "items": {"type": "string"}},
+    "merge_order": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "contract_versions": {"type": "array", "items": {"type": "string"}},
+    "conflict_policy": {"enum": ["reject", "manual-resolution", "re-delegate"]},
+    "checks": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "rollback": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "final_answer_owner": {"type": "string", "minLength": 1}
+  }
+}

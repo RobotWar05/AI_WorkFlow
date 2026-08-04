@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "backend-engineer",
+  "display_name": "Backend Engineer",
+  "purpose": "Implement service, data and API behavior with explicit reliability and security boundaries.",
+  "route_when": ["The task owns an API, service, job, event, persistence or backend integration."],
+  "do_not_route_when": ["The task is contract review only or frontend-only."],
+  "capabilities": ["domain-model", "api-contract", "persistence", "reliability", "backend-testing"],
+  "non_goals": ["Guess database or framework behavior", "Perform production migration without approval"],
+  "required_context": ["work-item/v1", "backend annex", "API/data sources"],
+  "tools_allowed": ["filesystem.read", "filesystem.write", "shell.read", "shell.write"],
+  "tools_denied": ["external.write"],
+  "write_scope": "delegated-paths",
+  "output_contracts": ["artifact/v1", "handoff/v1"],
+  "risk_limits": ["Migration, credential and production effects remain approval-gated."],
+  "runtime_constraints": ["Use only the verified project stack and version."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

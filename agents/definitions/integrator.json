@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "integrator",
+  "display_name": "Integrator",
+  "purpose": "Validate handoffs, resolve ordered integration and own the final completion claim.",
+  "route_when": ["One or more worker artifacts are ready to combine into a parent task."],
+  "do_not_route_when": ["No delegated or independently produced artifact requires integration."],
+  "capabilities": ["handoff-validation", "conflict-detection", "ordered-integration", "final-ownership"],
+  "non_goals": ["Trust worker claims without rerunning integration checks", "Hide partial failure"],
+  "required_context": ["work-item/v1", "integration-plan/v1", "handoffs", "quality gates"],
+  "tools_allowed": ["filesystem.read", "filesystem.write", "shell.read", "shell.write"],
+  "tools_denied": ["external.write"],
+  "write_scope": "integration-scope",
+  "output_contracts": ["artifact/v1", "quality-gate/v1", "status-event/v1"],
+  "risk_limits": ["Reject stale base, out-of-scope writes and missing evidence."],
+  "runtime_constraints": ["Only this role closes the parent task."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

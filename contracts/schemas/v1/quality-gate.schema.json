@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/quality-gate.schema.json",
+  "title": "Quality Gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "gate_id", "task_id", "stage", "evaluator", "artifacts", "criteria", "checks", "overall", "blockers"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "gate_id": {"type": "string", "pattern": "^GATE-[A-Z0-9-]+$"},
+    "task_id": {"type": "string", "pattern": "^TASK-[A-Z0-9-]+$"},
+    "stage": {"enum": ["G0_BRIEF", "G1_DELEGATION", "G2_WORKER", "G3_INTEGRATION", "G4_VERIFICATION", "G5_RELEASE"]},
+    "evaluator": {"type": "string", "minLength": 1},
+    "artifacts": {"type": "array", "items": {"type": "string"}},
+    "criteria": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "method", "expected", "actual", "evidence", "result"],
+        "properties": {
+          "type": {"enum": ["deterministic", "human", "llm-judge"]},
+          "method": {"type": "string"},
+          "expected": {"type": "string"},
+          "actual": {"type": "string"},
+          "evidence": {"type": "string"},
+          "result": {"enum": ["passed", "failed", "inconclusive", "skipped"]}
+        }
+      }
+    },
+    "overall": {"enum": ["passed", "failed", "inconclusive"]},
+    "blockers": {"type": "array", "items": {"type": "string"}},
+    "waiver": {"type": ["object", "null"], "additionalProperties": false, "required": ["approved_by", "reason"], "properties": {"approved_by": {"type": "string"}, "reason": {"type": "string"}}}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"overall": {"const": "passed"}}, "required": ["overall"]},
+      "then": {"properties": {"blockers": {"maxItems": 0}, "checks": {"items": {"properties": {"result": {"const": "passed"}}}}}}
+    }
+  ]
+}

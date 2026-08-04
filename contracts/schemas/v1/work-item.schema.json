@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/work-item.schema.json",
+  "title": "Work Item",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "task_id", "title", "objective", "mode", "risk_level", "scope", "context_manifest", "authority", "budget", "verification_plan", "deliverables", "acceptance_criteria", "status", "integrator"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "task_id": {"type": "string", "pattern": "^TASK-[A-Z0-9-]+$"},
+    "title": {"type": "string", "minLength": 1},
+    "objective": {"type": "string", "minLength": 1},
+    "rationale": {"type": "string"},
+    "mode": {"enum": ["single-owner", "manager-workers", "isolated-parallel", "peer-team-experimental"]},
+    "domain": {"enum": ["generic", "frontend", "backend", "fullstack", "embedded", "knowledge"]},
+    "risk_level": {"enum": ["low", "medium", "high", "critical"]},
+    "owner": {"type": ["string", "null"]},
+    "integrator": {"type": "string", "minLength": 1},
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["include", "exclude"],
+      "properties": {
+        "include": {"type": "array", "items": {"type": "string"}},
+        "exclude": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "authoritative_context": {"type": "array", "items": {"type": "string"}},
+    "context_manifest": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["must_load", "retrieve_on_demand", "reference_only", "excluded"],
+      "properties": {
+        "must_load": {"type": "array", "items": {"type": "string"}},
+        "retrieve_on_demand": {"type": "array", "items": {"type": "string"}},
+        "reference_only": {"type": "array", "items": {"type": "string"}},
+        "excluded": {"type": "array", "items": {"type": "string"}},
+        "max_tokens": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "inputs": {"type": "array", "items": {"type": "string"}},
+    "constraints": {"type": "array", "items": {"type": "string"}},
+    "unknowns": {"type": "array", "items": {"type": "string"}},
+    "authority": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["read_paths", "write_paths", "protected_paths", "max_effect_class", "approval_gates"],
+      "properties": {
+        "read_paths": {"type": "array", "items": {"type": "string"}},
+        "write_paths": {"type": "array", "items": {"type": "string"}},
+        "protected_paths": {"type": "array", "items": {"type": "string"}},
+        "max_effect_class": {"enum": ["E0", "E1", "E2", "E3", "E4", "E5", "E6", "E7"]},
+        "approval_gates": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["max_turns", "max_minutes", "max_tool_calls", "max_children", "max_concurrency"],
+      "properties": {
+        "max_turns": {"type": "integer", "minimum": 1},
+        "max_minutes": {"type": "integer", "minimum": 1},
+        "max_tool_calls": {"type": "integer", "minimum": 1},
+        "max_children": {"type": "integer", "minimum": 0},
+        "max_concurrency": {"type": "integer", "minimum": 1},
+        "max_tokens": {"type": ["integer", "null"], "minimum": 1}
+      }
+    },
+    "verification_plan": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "deliverables": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "acceptance_criteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["id", "criterion"],
+        "properties": {"id": {"type": "string", "pattern": "^AC-[0-9]+$"}, "criterion": {"type": "string", "minLength": 1}}
+      }
+    },
+    "dependencies": {"type": "array", "items": {"type": "string"}},
+    "status": {"enum": ["DRAFT", "READY", "ASSIGNED", "WORKING", "READY_FOR_REVIEW", "READY_FOR_INTEGRATION", "INTEGRATING", "VERIFIED", "COMPLETED", "INPUT_REQUIRED", "APPROVAL_REQUIRED", "BLOCKED", "FAILED", "REJECTED", "CANCELED", "REWORK"]}
+  }
+}

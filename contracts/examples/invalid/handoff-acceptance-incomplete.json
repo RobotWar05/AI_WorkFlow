@@ -1,0 +1,18 @@
+{
+  "schema_version": "1.0.0",
+  "handoff_id": "HO-BAD-AC",
+  "task_id": "TASK-DEMO-001",
+  "delegation_id": "DEL-DEMO-API",
+  "from": "backend-worker",
+  "to": "integrator",
+  "status": "completed",
+  "result": "Only one delegated criterion has evidence.",
+  "artifacts": [],
+  "files_touched": ["src/api/example.py"],
+  "decisions": [],
+  "checks": [{"command": "test", "exit_code": 0, "evidence": "one case passed", "result": "passed"}],
+  "acceptance_results": [{"criterion_id": "AC-1", "result": "passed", "evidence": "passed"}],
+  "assumptions": [], "unknowns": [], "remaining": [], "risks": [], "conflicts": [], "approvals": [], "integration_notes": [],
+  "next_action": "Request evidence for AC-2.",
+  "base_revision": null
+}

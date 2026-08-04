@@ -1,0 +1,6 @@
+{
+  "name": "embedded",
+  "description": "Engineering core plus embedded system design.",
+  "extends": ["engineering-core"],
+  "skills": ["embedded-system-design"]
+}

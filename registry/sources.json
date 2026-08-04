@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "sources": [
+    {
+      "id": "legacy-skill-for-my-ai",
+      "kind": "private-legacy",
+      "upstream_url": "https://github.com/RobotWar05/Skill-For-My-AI",
+      "revision": "76829ae4c9ce1c8b0878dd45a7dffdc971bab845",
+      "license": "MIT",
+      "status": "historical-reference-removed",
+      "owner": "RobotWar05",
+      "reviewed_at": "2026-08-03",
+      "dependencies": [],
+      "review_scope": "Historical local files, nested Git state, audit reports, structure, and representative skill content.",
+      "license_evidence": "https://raw.githubusercontent.com/RobotWar05/Skill-For-My-AI/76829ae4c9ce1c8b0878dd45a7dffdc971bab845/Skill_AI/LICENSE",
+      "notes": "Local snapshot was removed after derivative extraction. Do not activate directly."
+    },
+    {
+      "id": "kepano-obsidian-skills",
+      "kind": "external-inspiration",
+      "upstream_url": "https://github.com/kepano/obsidian-skills",
+      "revision": "a1dc48e68138490d522c04cbf5822214c6eb1202",
+      "license": "MIT",
+      "status": "pinned-inspiration",
+      "owner": "Steph Ango (@kepano)",
+      "reviewed_at": "2026-08-03",
+      "dependencies": [],
+      "review_scope": "README, license, Obsidian Markdown concepts, and local derivative boundaries; no executable code vendored.",
+      "license_evidence": "https://raw.githubusercontent.com/kepano/obsidian-skills/a1dc48e68138490d522c04cbf5822214c6eb1202/LICENSE",
+      "local_derivatives": ["obsidian-markdown"],
+      "notes": "Pin an exact reviewed commit before distribution or stable graduation."
+    },
+    {
+      "id": "dietrichgebert-ponytail",
+      "kind": "external-inspiration",
+      "upstream_url": "https://github.com/DietrichGebert/ponytail",
+      "revision": "16f29800fd2681bdf24f3eb4ccffe38be3baec6b",
+      "license": "MIT",
+      "status": "pinned-inspiration",
+      "owner": "DietrichGebert",
+      "reviewed_at": "2026-08-03",
+      "dependencies": [],
+      "review_scope": "README decision ladder, safety floor, portability notes, and license; lifecycle hooks were not imported.",
+      "license_evidence": "https://raw.githubusercontent.com/DietrichGebert/ponytail/16f29800fd2681bdf24f3eb4ccffe38be3baec6b/LICENSE",
+      "local_derivatives": ["minimal-implementation"],
+      "notes": "Only the decision ladder is adapted. No plugin or lifecycle hooks are imported."
+    },
+    {
+      "id": "leonxlnx-taste-skill",
+      "kind": "external-inspiration",
+      "upstream_url": "https://github.com/leonxlnx/taste-skill",
+      "revision": "e988add20dab0fa97d7a76781c48961c8184288e",
+      "license": "MIT",
+      "status": "pinned-inspiration",
+      "owner": "Leonxlnx",
+      "reviewed_at": "2026-08-03",
+      "dependencies": [],
+      "review_scope": "Design-direction concepts, scope boundaries, and license; no universal aesthetic rules imported.",
+      "license_evidence": "https://raw.githubusercontent.com/leonxlnx/taste-skill/e988add20dab0fa97d7a76781c48961c8184288e/LICENSE",
+      "local_derivatives": ["frontend-design-direction"],
+      "notes": "Use only brief inference and scoped design heuristics; reject universal personal taste rules."
+    },
+    {
+      "id": "vercel-agent-skills",
+      "kind": "external-inspiration",
+      "upstream_url": "https://github.com/vercel-labs/agent-skills",
+      "revision": "7c180d9044c9ae2b442b567aad4e42a28dd5ed62",
+      "license": "MIT-per-upstream-README-no-license-file-at-pin",
+      "status": "pinned-inspiration",
+      "owner": "Vercel Labs",
+      "reviewed_at": "2026-08-03",
+      "dependencies": [],
+      "review_scope": "Repository README and web-design-guidelines taxonomy; no scripts or rule bundle vendored.",
+      "license_evidence": "https://github.com/vercel-labs/agent-skills/tree/7c180d9044c9ae2b442b567aad4e42a28dd5ed62#license",
+      "local_derivatives": ["frontend-interface-review"],
+      "notes": "Review and pin exact interface-quality sources before distribution."
+    },
+    {
+      "id": "vinqa-reference",
+      "kind": "private-project-reference",
+      "revision": null,
+      "license": "private-do-not-distribute",
+      "status": "historical-private-reference-removed",
+      "owner": "private workspace",
+      "reviewed_at": "2026-08-03",
+      "dependencies": [],
+      "review_scope": "All routers and 78 SKILL.md files; representative references, links, duplication, stack drift, and unsafe automation patterns.",
+      "license_evidence": "private reference; local snapshot intentionally removed; no redistribution authorization",
+      "notes": "Local snapshot was removed after audit. It contained duplicated skills, broken links, unimplemented MCP claims, and opt-out telemetry risks."
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "tool_id": "repository.read-file",
+  "purpose": "Read one repository file inside the authorized scope.",
+  "input_schema": "path:string",
+  "output_schema": "content:string",
+  "side_effect": "E0",
+  "timeout_seconds": 10,
+  "idempotency": "idempotent",
+  "dry_run": false,
+  "approval": "none",
+  "errors": ["PATH_OUTSIDE_SCOPE", "NOT_FOUND", "PERMISSION_DENIED", "TIMEOUT"]
+}

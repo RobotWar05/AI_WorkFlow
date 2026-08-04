@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/team-topology.schema.json",
+  "title": "Team Topology",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "topology_id", "mode", "purpose", "roles", "final_owner", "communication", "write_policy", "eligibility", "stop_conditions"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "topology_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "mode": {"enum": ["single-owner", "manager-workers", "isolated-parallel", "peer-team-experimental"]},
+    "purpose": {"type": "string", "minLength": 1},
+    "roles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "final_owner": {"type": "string"},
+    "communication": {"enum": ["self", "parent-child", "artifact-mediated", "peer-and-parent"]},
+    "write_policy": {"enum": ["single-writer", "exclusive-paths", "isolated-worktrees"]},
+    "eligibility": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "stop_conditions": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "experimental": {"type": "boolean"}
+  }
+}

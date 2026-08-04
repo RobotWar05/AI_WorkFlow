@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "topology_id": "fullstack-split",
+  "mode": "isolated-parallel",
+  "purpose": "Run frontend and backend work in parallel behind a versioned integration contract.",
+  "roles": ["architect", "frontend-engineer", "backend-engineer", "verifier", "integrator"],
+  "final_owner": "integrator",
+  "communication": "artifact-mediated",
+  "write_policy": "isolated-worktrees",
+  "eligibility": ["API/schema is approved before implementation.", "Frontend and backend write-sets are disjoint.", "Repository has a Git baseline."],
+  "stop_conditions": ["Contract changes without version negotiation", "Base revision is stale", "Cross-layer verification fails"],
+  "experimental": false
+}

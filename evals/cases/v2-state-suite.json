@@ -1,0 +1,7 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {"id": "valid-assignment", "fixture": "contracts/examples/valid/status-event.json", "expected_errors": []},
+    {"id": "reject-worker-completion", "fixture": "contracts/examples/invalid/status-event-illegal-transition.json", "expected_errors": ["ILLEGAL_TRANSITION", "ROLE_NOT_ALLOWED"]}
+  ]
+}

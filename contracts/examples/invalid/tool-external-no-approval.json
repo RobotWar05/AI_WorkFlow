@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "tool_id": "external.send-message",
+  "purpose": "Send a message to an external recipient.",
+  "input_schema": "message:string",
+  "output_schema": "receipt:string",
+  "side_effect": "E3",
+  "timeout_seconds": 30,
+  "idempotency": "key-required",
+  "dry_run": false,
+  "approval": "none",
+  "errors": ["APPROVAL_REQUIRED", "TIMEOUT"]
+}

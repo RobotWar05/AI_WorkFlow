@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "gate_id": "GATE-BAD-001",
+  "task_id": "TASK-DEMO-001",
+  "stage": "G4_VERIFICATION",
+  "evaluator": "verifier",
+  "artifacts": [],
+  "criteria": ["AC-1"],
+  "checks": [{"type": "deterministic", "method": "test", "expected": "pass", "actual": "failed", "evidence": "one failing test", "result": "failed"}],
+  "overall": "passed",
+  "blockers": ["A required test failed"]
+}

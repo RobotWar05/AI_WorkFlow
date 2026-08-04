@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "topology_id": "debug-hypotheses",
+  "mode": "manager-workers",
+  "purpose": "Test independent failure hypotheses without parallel speculative edits.",
+  "roles": ["orchestrator", "researcher", "reviewer", "integrator"],
+  "final_owner": "integrator",
+  "communication": "parent-child",
+  "write_policy": "single-writer",
+  "eligibility": ["Observed failure is reproducible or has evidence.", "Hypotheses can be tested read-only or in isolation."],
+  "stop_conditions": ["Evidence disproves a hypothesis", "A test needs unsafe external effects", "Root cause requires shared sequential investigation"],
+  "experimental": false
+}

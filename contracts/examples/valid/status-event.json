@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "EVT-DEMO-001",
+  "task_id": "TASK-DEMO-001",
+  "attempt_id": "ATT-DEMO-001",
+  "timestamp": "2026-08-03T10:00:00+07:00",
+  "actor": "orchestrator",
+  "from_state": "READY",
+  "to_state": "ASSIGNED",
+  "reason": "Validated delegation packet was dispatched.",
+  "evidence": ["DEL-DEMO-API"]
+}

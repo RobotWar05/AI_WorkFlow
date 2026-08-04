@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/status-event.schema.json",
+  "title": "Status Event",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "event_id", "task_id", "attempt_id", "timestamp", "actor", "from_state", "to_state", "reason"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "event_id": {"type": "string", "pattern": "^EVT-[A-Z0-9-]+$"},
+    "task_id": {"type": "string", "pattern": "^TASK-[A-Z0-9-]+$"},
+    "attempt_id": {"type": "string", "pattern": "^ATT-[A-Z0-9-]+$"},
+    "timestamp": {"type": "string", "format": "date-time"},
+    "actor": {"type": "string", "minLength": 1},
+    "from_state": {"type": ["string", "null"]},
+    "to_state": {"type": "string", "minLength": 1},
+    "reason": {"type": "string", "minLength": 1},
+    "evidence": {"type": "array", "items": {"type": "string"}}
+  }
+}

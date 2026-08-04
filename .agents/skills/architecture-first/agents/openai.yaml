@@ -1,0 +1,4 @@
+interface:
+  display_name: "Architecture First"
+  short_description: "Design boundaries and flows before implementation"
+  default_prompt: "Use $architecture-first to design boundaries interfaces and verification before implementation or migration."

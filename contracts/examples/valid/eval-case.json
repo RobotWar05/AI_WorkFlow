@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "case_id": "EVAL-DEMO-001",
+  "objective": "Compare typed handoff with prose-only handoff.",
+  "mode": "manager-workers",
+  "fixture": "contracts/examples/valid/work-item.json",
+  "hard_guardrails": ["No writes outside delegated scope", "No unsupported completion claim"],
+  "outcome_checks": ["Integrator identifies every acceptance result"],
+  "acceptable_variations": ["Worker implementation trajectory may differ"],
+  "trial_count": 3,
+  "budget": {"max_turns": 12, "max_minutes": 30, "max_tokens": null}
+}

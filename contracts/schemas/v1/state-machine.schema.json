@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/state-machine.schema.json",
+  "title": "Task State Machine",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "initial_state", "states", "terminal_states", "transitions", "restricted_transitions"],
+  "properties": {
+    "schema_version": {"const": "1.0.0"},
+    "initial_state": {"type": "string"},
+    "states": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"type": "string"}},
+    "terminal_states": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+    "transitions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "object", "additionalProperties": false, "required": ["from", "to", "gate"], "properties": {"from": {"type": "string"}, "to": {"type": "string"}, "gate": {"type": "string"}}}
+    },
+    "restricted_transitions": {
+      "type": "array",
+      "items": {"type": "object", "additionalProperties": false, "required": ["to", "allowed_roles"], "properties": {"to": {"type": "string"}, "allowed_roles": {"type": "array", "minItems": 1, "items": {"type": "string"}}}}
+    }
+  }
+}

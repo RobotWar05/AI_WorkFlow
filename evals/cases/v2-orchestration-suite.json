@@ -1,0 +1,85 @@
+{
+  "schema_version": "1.0.0",
+  "cases": [
+    {
+      "id": "valid-bounded-delegation",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/valid/delegation-packet.json"],
+      "handoffs": ["contracts/examples/valid/handoff.json"],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": []
+    },
+    {
+      "id": "reject-overlapping-write-sets",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/valid/delegation-packet.json", "contracts/examples/invalid/delegation-overlap.json"],
+      "handoffs": [],
+      "integration": "contracts/examples/invalid/integration-two-workers.json",
+      "expected_errors": ["WRITE_SET_CONFLICT"]
+    },
+    {
+      "id": "reject-out-of-scope-worker-write",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/valid/delegation-packet.json"],
+      "handoffs": ["contracts/examples/invalid/handoff-outside-write-set.json"],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["WRITE_SCOPE_VIOLATION"]
+    },
+    {
+      "id": "reject-wrong-final-owner",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/valid/delegation-packet.json"],
+      "handoffs": ["contracts/examples/valid/handoff.json"],
+      "integration": "contracts/examples/invalid/integration-wrong-owner.json",
+      "expected_errors": ["FINAL_OWNER_MISMATCH"]
+    },
+    {
+      "id": "reject-authority-escalation",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/invalid/delegation-authority-escalation.json"],
+      "handoffs": [],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["AUTHORITY_ESCALATION"]
+    },
+    {
+      "id": "reject-protected-scope",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/invalid/delegation-protected-path.json"],
+      "handoffs": [],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["DELEGATED_SCOPE_EXCEEDS_TASK", "PROTECTED_PATH_DELEGATED"]
+    },
+    {
+      "id": "reject-unsafe-path",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/invalid/delegation-unsafe-path.json"],
+      "handoffs": [],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["UNSAFE_PATH"]
+    },
+    {
+      "id": "reject-base-mismatch",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/invalid/delegation-base-mismatch.json"],
+      "handoffs": [],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["BASE_REVISION_MISMATCH"]
+    },
+    {
+      "id": "reject-handoff-actor-mismatch",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/valid/delegation-packet.json"],
+      "handoffs": ["contracts/examples/invalid/handoff-actor-mismatch.json"],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["HANDOFF_ACTOR_MISMATCH"]
+    },
+    {
+      "id": "reject-incomplete-acceptance",
+      "task": "contracts/examples/valid/work-item.json",
+      "delegations": ["contracts/examples/valid/delegation-packet.json"],
+      "handoffs": ["contracts/examples/invalid/handoff-acceptance-incomplete.json"],
+      "integration": "contracts/examples/valid/integration-plan.json",
+      "expected_errors": ["ACCEPTANCE_INCOMPLETE"]
+    }
+  ]
+}

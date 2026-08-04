@@ -1,0 +1,23 @@
+{
+  "schema_version": "1.0.0",
+  "delegation_id": "DEL-DEMO-API",
+  "parent_task_id": "TASK-DEMO-001",
+  "delegate": "backend-worker",
+  "role": "backend-engineer",
+  "objective": "Attempt path traversal.",
+  "read_set": ["src/"],
+  "write_set": ["../outside"],
+  "required_skills": [],
+  "tools_allowed": ["filesystem.read", "filesystem.write"],
+  "tools_denied": [],
+  "forbidden_actions": [],
+  "max_effect_class": "E1",
+  "workspace_isolation": "exclusive-path",
+  "base_revision": null,
+  "budget": {"max_turns": 2, "max_minutes": 5},
+  "acceptance_criteria": ["AC-1", "AC-2"],
+  "expected_artifacts": [],
+  "stop_conditions": ["Unsafe path detected"],
+  "escalation_conditions": ["Path invalid"],
+  "return_contract": "handoff/v1"
+}

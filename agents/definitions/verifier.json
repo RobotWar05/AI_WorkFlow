@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "verifier",
+  "display_name": "Verifier",
+  "purpose": "Evaluate acceptance criteria using deterministic evidence before model judgment.",
+  "route_when": ["A deliverable is ready for completion or integration gating."],
+  "do_not_route_when": ["No deliverable or acceptance criteria exist yet."],
+  "capabilities": ["schema-check", "test-execution", "artifact-inspection", "acceptance-scoring"],
+  "non_goals": ["Treat self-reflection as proof", "Deploy or migrate during verification"],
+  "required_context": ["work-item/v1", "artifacts", "verification plan"],
+  "tools_allowed": ["filesystem.read", "shell.read"],
+  "tools_denied": ["filesystem.write", "external.write"],
+  "write_scope": "none",
+  "output_contracts": ["quality-gate/v1", "handoff/v1"],
+  "risk_limits": ["A zero exit code is insufficient when meaningful output contradicts it."],
+  "runtime_constraints": ["Classify untested criteria as inconclusive, never passed."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}

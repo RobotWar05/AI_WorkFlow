@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "topology_id": "manager-workers",
+  "mode": "manager-workers",
+  "purpose": "Delegate bounded work while parent owns integration and final response.",
+  "roles": ["orchestrator", "researcher", "architect", "reviewer", "verifier", "integrator"],
+  "final_owner": "integrator",
+  "communication": "parent-child",
+  "write_policy": "exclusive-paths",
+  "eligibility": ["Each delegated work item has a typed return contract.", "Worker write-sets are empty or disjoint."],
+  "stop_conditions": ["Handoff is invalid", "Worker requires undelegated authority", "Coordination cost exceeds expected value"],
+  "experimental": false
+}

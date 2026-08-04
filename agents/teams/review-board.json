@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "topology_id": "review-board",
+  "mode": "manager-workers",
+  "purpose": "Collect independent read-only reviews across distinct risk dimensions.",
+  "roles": ["reviewer", "verifier", "integrator"],
+  "final_owner": "integrator",
+  "communication": "parent-child",
+  "write_policy": "single-writer",
+  "eligibility": ["Review dimensions are independent and evidence sources are available."],
+  "stop_conditions": ["Reviewers duplicate the same scope", "No acceptance or severity rubric exists"],
+  "experimental": false
+}

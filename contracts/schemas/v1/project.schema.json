@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ai-workflow.local/schemas/v1/project.schema.json",
+  "title": "AI Workflow Project",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "project_id", "name", "default_mode", "default_profile", "integration_owner", "canonical_paths", "approval_policy", "runtime_adapters", "worktree_ready"],
+  "properties": {
+    "$schema": {"type": "string"},
+    "schema_version": {"type": "string", "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"},
+    "project_id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "name": {"type": "string", "minLength": 1},
+    "default_mode": {"enum": ["single-owner", "manager-workers", "isolated-parallel", "peer-team-experimental"]},
+    "default_profile": {"type": "string", "minLength": 1},
+    "integration_owner": {"type": "string", "minLength": 1},
+    "canonical_paths": {
+      "type": "object",
+      "additionalProperties": {"type": "string", "minLength": 1},
+      "required": ["skills", "agents", "contracts", "domains", "workflows", "run_state"]
+    },
+    "approval_policy": {"type": "string", "minLength": 1},
+    "runtime_adapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"enum": ["codex", "claude", "antigravity"]}},
+    "worktree_ready": {"type": "boolean"}
+  }
+}

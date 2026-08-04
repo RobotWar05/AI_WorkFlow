@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "skills": [
+    {"name":"evidence-research","status":"draft","profile":["engineering-core","embedded"],"source":"local"},
+    {"name":"architecture-first","status":"draft","profile":["engineering-core","embedded","frontend"],"source":"local"},
+    {"name":"systematic-debugging","status":"draft","profile":["engineering-core","embedded"],"source":"local"},
+    {"name":"verify-before-completion","status":"draft","profile":["engineering-core","embedded","frontend"],"source":"local"},
+    {"name":"minimal-implementation","status":"draft","profile":["minimal"],"source":"dietrichgebert-ponytail","implicit":false},
+    {"name":"embedded-system-design","status":"draft","profile":["embedded"],"source":"local"},
+    {"name":"frontend-design-direction","status":"draft","profile":["frontend"],"source":"leonxlnx-taste-skill"},
+    {"name":"frontend-interface-review","status":"draft","profile":["frontend"],"source":"vercel-agent-skills"},
+    {"name":"obsidian-markdown","status":"draft","profile":["knowledge"],"source":"kepano-obsidian-skills"},
+    {"name":"second-brain","status":"draft","profile":["knowledge"],"source":"local","writes_require_approval":true},
+    {"name":"orchestrate-agent-work","status":"draft","profile":["orchestration"],"source":"local"}
+  ]
+}

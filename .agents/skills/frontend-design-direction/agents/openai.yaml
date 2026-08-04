@@ -1,0 +1,4 @@
+interface:
+  display_name: "Frontend Design Direction"
+  short_description: "Choose intentional visual direction from a brief"
+  default_prompt: "Use $frontend-design-direction to infer and implement the right visual direction for this page."

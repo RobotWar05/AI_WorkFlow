@@ -1,0 +1,13 @@
+{
+  "schema_version": "1.0.0",
+  "topology_id": "single-owner",
+  "mode": "single-owner",
+  "purpose": "Complete a task with one context and one write owner.",
+  "roles": ["integrator"],
+  "final_owner": "integrator",
+  "communication": "self",
+  "write_policy": "single-writer",
+  "eligibility": ["Task is sequential or shares dense context."],
+  "stop_conditions": ["Acceptance fails", "Authority is insufficient", "Material architecture decision requires input"],
+  "experimental": false
+}

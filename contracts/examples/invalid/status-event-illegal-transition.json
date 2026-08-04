@@ -1,0 +1,12 @@
+{
+  "schema_version": "1.0.0",
+  "event_id": "EVT-BAD-TRANSITION",
+  "task_id": "TASK-DEMO-001",
+  "attempt_id": "ATT-DEMO-001",
+  "timestamp": "2026-08-03T10:01:00+07:00",
+  "actor": "backend-worker",
+  "from_state": "WORKING",
+  "to_state": "COMPLETED",
+  "reason": "Worker attempts to close the parent task.",
+  "evidence": []
+}

@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "candidates": [
+    {"id": "api-contract-review", "status": "candidate", "activate_when": "A project has a versioned API contract."},
+    {"id": "postgres-best-practices", "status": "candidate", "activate_when": "A verified project uses PostgreSQL."},
+    {"id": "fastapi", "status": "candidate", "activate_when": "A verified project uses FastAPI and its version is known."},
+    {"id": "react-best-practices", "status": "candidate", "activate_when": "A verified project uses React or Next.js."},
+    {"id": "obsidian-bases", "status": "candidate", "activate_when": "The vault needs structured database-like views."},
+    {"id": "multi-agent-orchestration", "status": "deferred", "activate_when": "Single-agent profiles are stable and delegation beats baseline."}
+  ]
+}

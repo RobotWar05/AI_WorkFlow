@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0.0",
+  "task_id": "TASK-DEMO-001",
+  "title": "Add a validated API endpoint",
+  "objective": "Add one endpoint and its consumer contract without changing production state.",
+  "rationale": "Demonstrate a bounded backend task.",
+  "mode": "manager-workers",
+  "domain": "backend",
+  "risk_level": "medium",
+  "owner": "orchestrator",
+  "integrator": "integrator",
+  "scope": {"include": ["src/api/", "tests/api/"], "exclude": ["deploy/", "production"]},
+  "authoritative_context": ["docs/api.md"],
+  "context_manifest": {
+    "must_load": ["AGENTS.md", "domains/backend/api-contract.md"],
+    "retrieve_on_demand": ["docs/api.md"],
+    "reference_only": [],
+    "excluded": ["evals/results/raw/"],
+    "max_tokens": null
+  },
+  "inputs": ["Existing API conventions"],
+  "constraints": ["No production calls"],
+  "unknowns": [],
+  "authority": {
+    "read_paths": ["src/", "tests/", "docs/"],
+    "write_paths": ["src/api/", "tests/api/"],
+    "protected_paths": ["deploy/", ".env"],
+    "max_effect_class": "E1",
+    "approval_gates": ["Any production or migration action"]
+  },
+  "budget": {"max_turns": 12, "max_minutes": 45, "max_tool_calls": 60, "max_children": 2, "max_concurrency": 2, "max_tokens": null},
+  "verification_plan": ["Validate schema", "Run focused tests", "Inspect changed files"],
+  "deliverables": ["Endpoint implementation", "Contract tests"],
+  "acceptance_criteria": [
+    {"id": "AC-1", "criterion": "Valid request returns the documented response."},
+    {"id": "AC-2", "criterion": "Invalid request is rejected by the boundary validator."}
+  ],
+  "dependencies": [],
+  "status": "READY"
+}

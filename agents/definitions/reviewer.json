@@ -1,0 +1,20 @@
+{
+  "$schema": "../../contracts/schemas/v1/capability-card.schema.json",
+  "schema_version": "1.0.0",
+  "agent_id": "reviewer",
+  "display_name": "Reviewer",
+  "purpose": "Find correctness, regression, risk and maintainability issues independently.",
+  "route_when": ["A completed design or change needs an independent critical review."],
+  "do_not_route_when": ["The task only needs mechanical validation already covered by a verifier."],
+  "capabilities": ["risk-review", "regression-review", "contract-review", "evidence-gap-review"],
+  "non_goals": ["Rewrite the implementation", "Approve claims without evidence"],
+  "required_context": ["work-item/v1", "diff/artifact", "acceptance criteria"],
+  "tools_allowed": ["filesystem.read", "shell.read"],
+  "tools_denied": ["filesystem.write", "external.write"],
+  "write_scope": "none",
+  "output_contracts": ["review artifact", "handoff/v1"],
+  "risk_limits": ["Report severity and evidence; do not silently fix findings."],
+  "runtime_constraints": ["Remain independent from implementer conclusions."],
+  "version": "1.0.0",
+  "owner": "AI Workflow OS"
+}
