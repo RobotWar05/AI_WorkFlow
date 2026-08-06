@@ -1,0 +1,36 @@
+BAO CAO CAU HINH & HUONG DAN SU DUNG TERMINAL WORKSPACE
+======================================================
+
+1. CAC PHAN MEM NEN TANG DA CAI DAT
+------------------------------------------------------
+- Scoop: Trinh quan ly goi phan mem cho Windows (Dung de cai dat nhanh khong can chuot).
+- Yazi: Trinh duyet file (File Manager) the he moi toc do cao, thao tac hoan toan bang ban phim.
+- Neovim (nvim): Trinh soan thao van ban/code sieu toc.
+- file & 7zip: Cac goi bo tro giup Yazi nhan dien dinh dang file (phan biet file text va thu muc).
+- fzf (Fuzzy Finder): Cong cu tim kiem mo sieu toc (giup tim kiem nhanh bat cu thu gi bang cach go vai chu cai tat).
+- zoxide (lenh z / zi): Cong cu "Smart cd", giup ban nhay vot den bat ky thu muc du an nao chi bang 1 lenh ngan gon `z ten_du_an` ma khong can go ca duong dan dai dong.
+
+2. CAC CAU HINH (CONFIG) CHI TIET DA CAN THIEP
+------------------------------------------------------
+A. Cau hinh Yazi (yazi.toml)
+- Vi tri: C:\Users\<Username>\AppData\Roaming\yazi\config\yazi.toml
+- Tinh nang: Bam [Enter] vao file van ban/code se mo thang bang Neovim. Bam vao Thu muc thi chi di vao thu muc.
+
+B. Cau hinh Phim tat Yazi (keymap.toml)
+- Vi tri: C:\Users\<Username>\AppData\Roaming\yazi\config\keymap.toml
+- Tinh nang: Gan phim dau huyen ( ` ) lam phim [Esc] de thoat/huy lenh.
+
+C. Neovim (LazyVim) & Phim tat
+- Vi tri: C:\Users\<Username>\AppData\Local\nvim\
+- Tinh nang 1: Cai dat ban phan phoi LazyVim giup bien Neovim thanh IDE chuyen nghiep (Co san Auto-session, Thanh Tab, Cay thu muc, Autocomplete).
+- Tinh nang 2 (lua\config\keymaps.lua): Gan phim [jk], [jj] va [ ` ] lam phim [Esc] de tranh loi Unikey va tranh viec phai voi tay len phim Esc bi hong.
+
+3. QUY TRINH LAM VIEC THUC TE (WORKFLOW PLAN)
+------------------------------------------------------
+- Buoc 1: Mo Windows Terminal. Go "yazi" de vao trinh quan ly file. (Hoac dung lenh "z ten_thu_muc" de nhay nhanh den thu muc du an tu bat cu dau).
+- Buoc 2: Dung phim (h, j, k, l) de di chuyen, chon file can code va nhan [Enter] de mo file bang Neovim.
+- Buoc 3: Trong Neovim, bam [i] de bat dau gõ. Go nhanh [jk] de thoat ve che do Normal.
+- Buoc 4: Can viet code phuc tap -> Alt+Tab mo trang web ChatGPT Plus -> Bật Mic noi -> Copy code -> Alt+Tab ve Terminal -> Dan (Paste) vao Neovim.
+- Buoc 5: Xong viec, go ":qa" de luu va thoat. He thong LazyVim se tu dong luu lai phien lam viec nay cho lan mo tiep theo.
+
+Chuc ban code vui ve va nang suat!
