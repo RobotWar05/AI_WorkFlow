@@ -33,6 +33,14 @@
       "retrieve_on_demand": ["domains/backend/api-contract.md", "workflows/evaluate-agent-system.md"],
       "machine_contracts": ["contracts/schemas/v1/work-item.schema.json", "contracts/schemas/v1/tool-contract.schema.json", "contracts/schemas/v1/eval-case.schema.json"],
       "fixture": "evals/fixtures/api-sdk/application-work-item.json"
+    },
+    {
+      "id": "project-memory-bootstrap",
+      "use_when": ["A target project needs a portable control plane and an approved None, Balanced, or Deep knowledge projection."],
+      "mode": "single-owner",
+      "must_load": ["workflows/project-memory-bootstrap.md", "project-templates/agent-control-plane/README.md", "contracts/templates/task-brief.md"],
+      "retrieve_on_demand": [".agents/prompts/bootstrap-project.md", "contracts/templates/source-grounding.md", "docs/project-memory.md"],
+      "machine_contracts": ["contracts/schemas/v1/work-item.schema.json"]
     }
   ]
 }

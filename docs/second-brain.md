@@ -1,5 +1,7 @@
 # Second Brain
 
+This repository's `knowledge/` directory is a reference/example vault. Project knowledge is created only through the selected `none`, `balanced` or `deep` memory profile; see [project memory profiles](project-memory.md).
+
 ## Mô hình hybrid
 
 - `00-inbox`: capture chưa xử lý.

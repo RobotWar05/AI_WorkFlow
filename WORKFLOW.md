@@ -26,6 +26,7 @@
 | Delegated frontend work | `workflows/delegated-task.md`, `domains/frontend/` | `manager-workers` |
 | Parallel full-stack plan | `workflows/multi-agent-delivery.md`, `domains/fullstack/` | `isolated-parallel` after Git baseline |
 | API/SDK application | `workflows/api-sdk-application.md`, `docs/api-and-sdk.md` | `single-owner` |
+| Bootstrap a project with memory | `workflows/project-memory-bootstrap.md`, `project-templates/agent-control-plane/` | `single-owner` |
 
 Exact bounded read sets and machine contracts are in `registry/routes.json`.
 
@@ -48,6 +49,7 @@ Exact bounded read sets and machine contracts are in `registry/routes.json`.
 - Bàn giao: `contracts/templates/worker-handoff.md`
 - Frontend/backend/full-stack/embedded: `domains/<domain>/`
 - Runtime: `adapters/<runtime>/README.md`
+- Project memory: `workflows/project-memory-bootstrap.md`, `docs/project-memory.md`
 - Validation: `py tools/workflowctl.py validate`
 
 ## Completion

@@ -1,0 +1,8 @@
+# Machine-local Obsidian state
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.trash/
+
+# Derived AI recall state; Markdown remains the source of truth.
+.aiwf-index/
+.claude-runs/

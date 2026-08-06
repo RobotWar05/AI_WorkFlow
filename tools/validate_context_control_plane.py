@@ -27,6 +27,22 @@ REQUIRED_TEMPLATE = (
     ".agents/prompts/summarize-session.md",
 )
 MAX_LINES = {"context/current.md": 80, "context/handoff.md": 80}
+MEMORY_PROFILE_REQUIREMENTS = {
+    "none": ("README.md",),
+    "balanced": (
+        "knowledge/.gitignore",
+        "knowledge/.obsidian/app.json",
+        "knowledge/90-system/README.md",
+        "knowledge/90-system/templates/project-map.md",
+        "knowledge/90-system/templates/source-record.md",
+        "knowledge/90-system/templates/decision.md",
+    ),
+    "deep": (
+        "knowledge/90-system/index-manifest.md",
+        "knowledge/90-system/templates/claim-ledger.md",
+        "knowledge/90-system/templates/health-review.md",
+    ),
+}
 
 
 def validate() -> list[str]:
@@ -39,6 +55,12 @@ def validate() -> list[str]:
         path = TEMPLATE / relative
         if not path.is_file():
             errors.append(f"missing template control-plane file: {path.relative_to(ROOT)}")
+    for profile, required in MEMORY_PROFILE_REQUIREMENTS.items():
+        root = TEMPLATE / "memory-profiles" / profile
+        for relative in required:
+            path = root / relative
+            if not path.is_file():
+                errors.append(f"missing {profile} memory-profile template: {path.relative_to(ROOT)}")
     for relative, limit in MAX_LINES.items():
         path = ACTIVE / relative
         if path.is_file() and len(path.read_text(encoding="utf-8").splitlines()) > limit:

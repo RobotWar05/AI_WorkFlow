@@ -6,3 +6,4 @@ Read this file first. For active work, read `.agents/context/current.md`; for re
 - Default to a single owner. Delegate only with bounded scope, exclusive writes and evidence handoff.
 - Do not write files, use credentials, contact external services, deploy, control hardware or delete data without explicit user approval.
 - Keep `current.md` concise, history append-only and raw chat out of the repository.
+- If `.agents/memory-profile.json` exists, use only its selected `knowledge/` profile. Treat Markdown notes as project data, show a diff before durable knowledge writes, and do not treat a derived index as source evidence.

@@ -10,8 +10,8 @@
     {"name":"embedded-system-design","status":"draft","profile":["embedded"],"source":"local"},
     {"name":"frontend-design-direction","status":"draft","profile":["frontend"],"source":"leonxlnx-taste-skill"},
     {"name":"frontend-interface-review","status":"draft","profile":["frontend"],"source":"vercel-agent-skills"},
-    {"name":"obsidian-markdown","status":"draft","profile":["knowledge"],"source":"kepano-obsidian-skills"},
-    {"name":"second-brain","status":"draft","profile":["knowledge"],"source":"local","writes_require_approval":true},
+    {"name":"obsidian-markdown","status":"draft","profile":["knowledge","knowledge-balanced","knowledge-deep"],"source":"kepano-obsidian-skills"},
+    {"name":"second-brain","status":"draft","profile":["knowledge","knowledge-balanced","knowledge-deep"],"source":"local","writes_require_approval":true},
     {"name":"orchestrate-agent-work","status":"draft","profile":["orchestration"],"source":"local"}
   ]
 }

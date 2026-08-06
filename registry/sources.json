@@ -46,6 +46,36 @@
       "notes": "Only the decision ladder is adapted. No plugin or lifecycle hooks are imported."
     },
     {
+      "id": "obsidian-second-brain",
+      "kind": "external-inspiration",
+      "upstream_url": "https://github.com/eugeniughelbur/obsidian-second-brain",
+      "revision": null,
+      "license": "MIT-per-upstream-README-unpinned",
+      "status": "candidate-reference-only",
+      "owner": "Eugeniu Ghelbur",
+      "reviewed_at": "2026-08-06",
+      "dependencies": [],
+      "review_scope": "README architecture, recall and automation boundaries only; no code, installer, hook, scheduler or dependency is imported.",
+      "license_evidence": "https://github.com/eugeniughelbur/obsidian-second-brain/blob/main/LICENSE",
+      "local_derivatives": [],
+      "notes": "Candidate only. Its background automation and auto-rewrite behavior are not compatible with approval-gated project knowledge."
+    },
+    {
+      "id": "agentmemory",
+      "kind": "external-candidate",
+      "upstream_url": "https://github.com/rohitg00/agentmemory",
+      "revision": null,
+      "license": "unreviewed",
+      "status": "candidate-reference-only",
+      "owner": "Rohit Gupta",
+      "reviewed_at": "2026-08-06",
+      "dependencies": [],
+      "review_scope": "README memory pipeline, local configuration and Codex hook claims only; no code, plugin, MCP server or hook is imported.",
+      "license_evidence": "unverified; review an exact revision before any integration",
+      "local_derivatives": [],
+      "notes": "Deferred until a separate local-only integration review. Automatic prompt and tool capture are out of scope."
+    },
+    {
       "id": "leonxlnx-taste-skill",
       "kind": "external-inspiration",
       "upstream_url": "https://github.com/leonxlnx/taste-skill",

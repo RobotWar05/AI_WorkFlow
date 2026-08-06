@@ -1,0 +1,5 @@
+{
+  "name": "knowledge-balanced",
+  "description": "Portable Obsidian knowledge projection with approval-gated Markdown capture and recall.",
+  "extends": ["knowledge"]
+}

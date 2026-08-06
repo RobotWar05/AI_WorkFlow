@@ -8,11 +8,12 @@
 4. [Evaluation](evaluation.md)
 5. [Skill governance](skill-governance.md)
 6. [Second brain](second-brain.md)
-7. [Research sources](research-sources.md)
-8. [API and SDK workflow](api-and-sdk.md)
-9. [V2 handoff](v2-handoff.md)
-10. [Roadmap](roadmap.md)
-11. [Using AI Workflow OS](using-ai-workflow.md)
+7. [Project memory profiles](project-memory.md)
+8. [Research sources](research-sources.md)
+9. [API and SDK workflow](api-and-sdk.md)
+10. [V2 handoff](v2-handoff.md)
+11. [Roadmap](roadmap.md)
+12. [Using AI Workflow OS](using-ai-workflow.md)
 
 Context vận hành và prompt chuyển chat nằm tại [`.agents/README.md`](../.agents/README.md), không phải trong `docs/`.
 

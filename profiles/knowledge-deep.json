@@ -1,0 +1,5 @@
+{
+  "name": "knowledge-deep",
+  "description": "Balanced knowledge projection plus source/claim health templates and an optional manual local index.",
+  "extends": ["knowledge-balanced"]
+}
